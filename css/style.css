@@ -1,0 +1,426 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'open_sansregular';
+  src: url("../fonts/OpenSans-Regular-webfont.eot");
+  src: url("../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular-webfont.woff") format("woff"), url("../fonts/OpenSans-Regular-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("../fonts/OpenSans-Light-webfont.eot");
+  src: url("../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light-webfont.woff") format("woff"), url("../fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'open_sanssemibold';
+  src: url("../fonts/OpenSans-Semibold-webfont.eot");
+  src: url("../fonts/OpenSans-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold-webfont.woff") format("woff"), url("../fonts/OpenSans-Semibold-webfont.ttf") format("truetype"), url("../fonts/OpenSans-Semibold-webfont.svg#open_sanssemibold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'icon-font';
+  src: url("../fonts/icon-font.eot?23935825");
+  src: url("../fonts/icon-font.eot?23935825#iefix") format("embedded-opentype"), url("../fonts/icon-font.woff?23935825") format("woff"), url("../fonts/icon-font.ttf?23935825") format("truetype"), url("../fonts/icon-font.svg?23935825#icon-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'icon-font';
+    src: url('../font/icon-font.svg?23935825#icon-font') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icon-font";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-ok:before {
+  content: '\e800';
+}
+
+/* 'юаА' */
+.icon-rss:before {
+  content: '\e801';
+}
+
+/* 'юаБ' */
+.icon-instagram:before {
+  content: '\e802';
+}
+
+/* 'юаВ' */
+.icon-twitter:before {
+  content: '\e803';
+}
+
+/* 'юаГ' */
+.icon-right-big:before {
+  content: '\e804';
+}
+
+/* 'юаД' */
+.icon-mail:before {
+  content: '\e805';
+}
+
+/* 'юаЕ' */
+.icon-right-open-big:before {
+  content: '\e806';
+}
+
+/* 'юаЖ' */
+.icon-left-open-big:before {
+  content: '\e807';
+}
+
+/* 'юаЗ' */
+/*----------Default styles----------*/
+html {
+  font-size: 1rem;
+  font-family: "open_sansregular", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: .9rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*----------Grid----------*/
+.container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/*----------Header----------*/
+header {
+  background: url(../img/headerbg.jpg);
+  height: 365px;
+}
+header .main-nav {
+  width: 61.53846%;
+  float: right;
+  margin-right: 0;
+  margin-top: 2rem;
+}
+header .main-nav li {
+  display: inline-block;
+  margin-right: 1.2rem;
+}
+header .main-nav li a {
+  color: #909090;
+  font-size: .9rem;
+}
+header .main-nav li a:hover, header .main-nav li a.active {
+  color: #fff;
+}
+
+main {
+  display: table;
+  overflow: hidden;
+  overflow: hidden;
+  *zoom: 1;
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+main .content {
+  display: table-cell;
+  width: 65.81197%;
+  padding-left: 8.54701%;
+  padding-right: 5.98291%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+main .content .postdate {
+  color: #7F7F7F;
+  padding-bottom: 1rem;
+}
+main .content .social-buttons {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+main .content iframe {
+  width: 100%;
+  height: 370px;
+}
+main .content li {
+  overflow: hidden;
+  *zoom: 1;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #bababa;
+}
+main .content li img {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+main .content p {
+  font-size: 1.063rem;
+  line-height: 2rem;
+  margin-top: .8rem;
+}
+main .content .pages-nav {
+  font-family: "open_sanslight", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+main .content .pages-nav a {
+  color: #ddddde;
+  font-size: 2.1rem;
+}
+main .content .pages-nav a:hover {
+  color: #000;
+}
+main .content .pages-nav .oldpage {
+  float: left;
+}
+main .content .pages-nav .newpage {
+  float: right;
+}
+main .sidebar {
+  padding-left: 5.98291%;
+  padding-right: 5.98291%;
+  padding-top: 3rem;
+  background: #F5F5F5;
+  padding-bottom: 2rem;
+  display: none;
+}
+main .sidebar p {
+  color: #5A5A5A;
+  font-size: .9rem;
+  line-height: 1.9rem;
+}
+main .sidebar > li {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #bababa;
+}
+main .sidebar .social-icons {
+  margin-top: 2rem;
+}
+main .sidebar .social-icons a {
+  color: #ddddde;
+  font-size: 2rem;
+}
+main .sidebar .social-icons a:hover {
+  color: #000;
+}
+main .sidebar .recent li {
+  margin-top: .5rem;
+}
+main .sidebar .recent a {
+  font-size: .9rem;
+  color: #333;
+}
+main .sidebar .recent a:hover {
+  color: #0083FF;
+}
+main .sidebar input[type="email"], main .sidebar input[type="search"] {
+  height: 2.25rem;
+  width: 14rem;
+  border: none;
+  margin-top: 1rem;
+  outline-style: none;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+main .sidebar input[type="email"]:focus, main .sidebar input[type="search"]:focus {
+  border: 3px solid #ccc;
+}
+main .sidebar .post-icon {
+  font-family: "icon-font";
+  color: #fff;
+  font-size: 1.1rem;
+  background: #c4c4c4;
+  height: 2.25rem;
+  width: 2.25rem;
+  position: absolute;
+  border: none;
+  margin-top: 1rem;
+  outline-style: none;
+}
+main .sidebar .post-icon:hover {
+  background: #00a2f2;
+}
+
+footer {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+footer .pre-footer {
+  background: #00a2f2;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+footer .pre-footer .social-icons li {
+  display: inline-block;
+  margin-right: .5rem;
+}
+footer .pre-footer .social-icons li a {
+  color: #fff;
+  font-size: 2rem;
+}
+footer .pre-footer .social-icons li a:hover {
+  color: #000;
+}
+footer .footer {
+  overflow: hidden;
+  background: #018dd2;
+  padding-left: 5.98291%;
+  padding-right: 5.98291%;
+  color: #D8D8D8;
+}
+footer .footer .copyright {
+  display: block;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+footer .footer .footer-nav {
+  display: block;
+  text-align: center;
+}
+footer .footer .footer-nav li {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+footer .footer .footer-nav li a {
+  color: #D8D8D8;
+  font-size: .9rem;
+}
+footer .footer .footer-nav li a:hover {
+  color: #fff;
+}
+
+@media (min-width: 750px) {
+  main .sidebar {
+    display: table-cell;
+  }
+
+  footer .footer .copyright {
+    display: inline-block;
+    padding-top: 2rem;
+  }
+  footer .footer .footer-nav {
+    float: right;
+    display: inline-block;
+  }
+}

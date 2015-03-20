@@ -1,0 +1,22 @@
+@include breakpoint ($large) {
+
+	main {
+		.sidebar {
+			display: table-cell;
+		}
+	}
+
+	footer {
+		.footer {
+			.copyright {
+				display: inline-block;
+				padding-top: 2rem;
+			}
+			.footer-nav {
+				float: right;
+				display: inline-block;
+			}
+		}
+	}
+
+}

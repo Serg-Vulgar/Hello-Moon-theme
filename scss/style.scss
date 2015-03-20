@@ -1,0 +1,239 @@
+@import "grids";
+@import "typography";
+
+
+/*----------Default styles----------*/
+
+html {
+	font-size: 1rem;
+	font-family: $font-main;
+}
+
+
+h2 {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	font-weight: normal;
+}
+
+
+h3 {
+	font-size: .9rem;
+	font-weight: bold;
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*----------Grid----------*/
+
+.container {
+	@include container;
+}
+
+/*----------Header----------*/
+
+header {
+	background: url(../img/headerbg.jpg);
+	height: 365px;
+	.main-nav {
+		@include span(7.5 last);
+		margin-top: 2rem;
+		li {
+			display: inline-block;
+			margin-right: 1.2rem;
+			a {
+				color: #909090;
+				font-size: .9rem;
+				&:hover, &.active {
+					color: $main-color;
+				}
+			}
+
+		}
+	}
+}
+
+main {
+	display: table;
+	overflow: hidden;
+	@include clearfix;
+	@include full;
+	.content {
+		display: table-cell;
+		width: span(8 no-gutters);
+		padding-left: span(1 wide);
+		padding-right: span(1);
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		.postdate {
+			color: #7F7F7F;
+			padding-bottom: 1rem;
+		}
+		.social-buttons {
+			margin-top: 1.5rem;
+			margin-bottom: 2.5rem;
+		}
+		iframe {
+			width: span(full);
+			height: 370px;
+		}
+		li {
+			@include clearfix;
+			padding-top: 2rem;
+			padding-bottom: 3rem;
+			border-bottom: 1px solid #bababa;//бабаба
+			img {
+				@include full;
+			}
+		}
+		p {
+			font-size: 1.063rem;
+			line-height: 2rem;
+			margin-top: .8rem;
+		}
+		.pages-nav {
+			font-family: $font-light;
+			overflow: hidden;
+			padding-top: 4rem;
+			padding-bottom: 2rem;
+			a {
+				color: #ddddde;
+				font-size: 2.1rem;
+				&:hover{
+					color: #000;
+				}
+			}
+			.oldpage {
+				float: left;
+			}
+			.newpage {
+				float: right;
+			}
+		}
+	}
+	.sidebar {
+		padding-left: span(1);
+		padding-right: span(1);
+		padding-top: 3rem;
+		background: $secondary-color;
+		padding-bottom: 2rem;
+		display: none;
+		p {
+			color: #5A5A5A;
+			font-size: .9rem;
+			line-height: 1.9rem;
+		}
+		&>li {
+			padding-bottom: 2rem;
+			border-bottom: 1px solid #bababa;
+		}
+		.social-icons {
+			margin-top: 2rem;
+			a {
+				color: #ddddde;
+				font-size: 2rem;
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+		.recent {
+			li {
+				margin-top: .5rem;
+			}
+			a {
+				font-size: .9rem;
+				color: #333;
+				&:hover {
+					color: #0083FF;
+				}
+			}
+		}
+		input[type="email"], input[type="search"] {
+			height: 2.25rem;
+			width: 14rem;
+			border: none;
+			margin-top: 1rem;
+			outline-style: none;
+			font-size: 1rem;
+			padding-left: 1rem;
+			&:focus {
+				border: 3px solid #ccc;
+			}
+		}
+		.post-icon {
+			font-family: $icon-font;
+			color: #fff;
+			font-size: 1.1rem;
+			background: #c4c4c4;
+			height: 2.25rem;
+			width: 2.25rem;
+			position: absolute;
+			border: none;
+			margin-top: 1rem;
+			outline-style: none;
+
+			&:hover {
+				background: #00a2f2;
+			}
+		}
+	}
+}
+
+footer {
+	@include full;
+	.pre-footer {
+		background: #00a2f2;
+		text-align: center;
+		padding: 2.5rem 0;
+		.social-icons {
+			li {
+				display: inline-block;
+				margin-right: .5rem;
+				a {
+					color: $main-color;
+					font-size: 2rem;
+					&:hover {
+						color: #000;
+					}
+				}
+			}
+		}
+	}
+	.footer {
+		overflow: hidden;
+		background: #018dd2;
+		padding-left: span(1);
+		padding-right: span(1);
+		color: #D8D8D8;
+		.copyright {
+			display: block;
+			margin-bottom: 2rem;
+			text-align: center;
+		}
+		.footer-nav {
+			display: block;
+			text-align: center;
+			li {
+				display: inline-block;
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+				margin-left: 1.25rem;
+				margin-right: 1.25rem;
+				a {
+					color: #D8D8D8;
+					font-size: .9rem;
+					&:hover {
+						color: $main-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+@import "screens/_large";
