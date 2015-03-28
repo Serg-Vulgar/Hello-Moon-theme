@@ -34,5 +34,8 @@
 					<button type="submit" class="post-icon icon-right-big"></button>
 				</form>
 			</li>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('MiddleSidebar') ) : ?>
+			<!–Default sidebar info goes here–>
+			<?php endif; ?>
 		</ul>
 	</main>
